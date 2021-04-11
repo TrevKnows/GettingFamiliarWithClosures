@@ -25,7 +25,20 @@ class ViewController: UIViewController {
         return filteredSetOfNumbers
     }
     
+    // Closure
     
+    func filterWithPredicateClosure(closure: (Int) -> Bool, numbers: [Int])-> [Int] {
+        
+        var filteredNumbers = [Int]()
+        for num in numbers {
+            // perform some condition check here
+            if closure(num) {
+                filteredNumbers.append(num)
+            }
+        }
+        
+        return filteredNumbers
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
